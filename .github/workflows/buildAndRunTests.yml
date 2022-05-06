@@ -1,0 +1,26 @@
+name: check docker build
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2.3.1
+      with:
+       persist-credentials: false
+          
+    - name: Build images and run
+      run: |
+       set -x
+       node -v
+       sh create-image-backend.sh
+       sh create-image-database.sh
+       docker-compose up -d
+       
+    - name: clone flexberry data
+      run: |
+       git clone https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
