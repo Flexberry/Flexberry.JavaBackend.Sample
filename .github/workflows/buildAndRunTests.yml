@@ -27,4 +27,4 @@ jobs:
        
     - name: change ember dummy config
       run: |
-       sh sh changeFrontendConfig.sh
+       sh changeFrontendConfig.sh
