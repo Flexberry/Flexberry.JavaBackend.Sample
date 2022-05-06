@@ -6,6 +6,7 @@ import EmberFlexberry.utils.UUIDConverter;
 
 import javax.persistence.*;
 import java.util.UUID;
+import java.util.Date;
 
 
 /**

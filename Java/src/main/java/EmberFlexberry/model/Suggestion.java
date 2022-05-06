@@ -91,7 +91,7 @@ public class Suggestion {
     private List<SuggestionFile> suggestionfiles;
 
     @OneToMany(mappedBy = "suggestion", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    private List<Vote> votes;
+    private List<Vote> userVotes;
 
 
     public Suggestion() {
