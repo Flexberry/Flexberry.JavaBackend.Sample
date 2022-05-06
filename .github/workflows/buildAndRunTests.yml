@@ -28,3 +28,18 @@ jobs:
     - name: change ember dummy config
       run: |
        sh changeFrontendConfig.sh
+       
+        - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          
+     - name: Init NodeJS env
+      run: |
+       set -x
+       node -v
+       npm install -g bower
+       npm install -g ember-cli@2.4.3
+       cd ember-flexberry-data
+       npm install
+       bower install
