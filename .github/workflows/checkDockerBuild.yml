@@ -1,0 +1,16 @@
+name: check docker build
+
+on: [ push, pull_request ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Build images
+      run: |
+       set -x
+       node -v
+       sh create-image-backend.sh
+       sh create-image-database.sh

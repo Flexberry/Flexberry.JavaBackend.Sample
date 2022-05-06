@@ -1,6 +1,6 @@
 ﻿FROM flexberry/alt.p8-postgresql
 
-COPY PostgreSql.create.sql /docker/
+COPY /SQL/PostgreSql.create.sql /docker/
 
 RUN \
   /docker-cmd.sh& \

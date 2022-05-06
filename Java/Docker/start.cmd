@@ -1,1 +1,0 @@
-docker-compose -p emberflexberry-java up -d

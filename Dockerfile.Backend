@@ -1,8 +1,8 @@
 ﻿FROM maven:3.8.1-adoptopenjdk-8-openj9
 WORKDIR /usr/src/app
-COPY /src/Java/pom.xml .
+COPY /Java/pom.xml .
 RUN mvn -B -e -C -T 1C org.apache.maven.plugins:maven-dependency-plugin:3.1.1:go-offline
-COPY /src/Java/src src
+COPY /Java/src src
 RUN mvn package
 
 FROM tomcat:jdk8-adoptopenjdk-openj9
