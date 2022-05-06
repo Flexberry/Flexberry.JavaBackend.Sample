@@ -24,3 +24,7 @@ jobs:
     - name: clone flexberry data
       run: |
        git clone https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
+       
+    - name: change ember dummy config
+      run: |
+       sh sh changeFrontendConfig.sh
