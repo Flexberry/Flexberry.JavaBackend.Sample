@@ -1,4 +1,4 @@
-name: check docker build
+name: build and run tests
 
 on: [ push, pull_request ]
 
