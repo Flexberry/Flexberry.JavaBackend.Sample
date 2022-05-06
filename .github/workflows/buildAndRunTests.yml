@@ -29,12 +29,12 @@ jobs:
       run: |
        sh changeFrontendConfig.sh
        
-        - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
           
-     - name: Init NodeJS env
+    - name: Init NodeJS env
       run: |
        set -x
        node -v
