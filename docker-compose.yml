@@ -1,7 +1,7 @@
 ﻿services:
     java-backend:
         image: emberflexberry-java/backend
-        build: ../src/main/webapp
+        build: /Java/src/main/webapp
         environment:
             DB_ADDR: app-postgres-db
             DB_NAME: appdb
