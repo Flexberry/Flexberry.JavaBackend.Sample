@@ -18,7 +18,7 @@ then
 			if [ -n "$findBack" ]
 			then
 				case $str in
-					*}*)
+					*)
 					findBack=
 					notfindedBack=
 					echo  "$back"
