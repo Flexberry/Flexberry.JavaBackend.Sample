@@ -37,6 +37,10 @@ jobs:
     - name: run compose
       run: |
        docker-compose up -d
+       
+    - name: run tests
+      run: |
+       google-chrome-stable http://localhost/tests
 
     - name: Shutdown docker services
       run: |
