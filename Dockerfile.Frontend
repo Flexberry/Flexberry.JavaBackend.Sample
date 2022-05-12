@@ -1,4 +1,4 @@
-﻿FROM node:10 as frontend
+﻿FROM node:10-alpine
 
 COPY ember-flexberry-data /usr/src/ember-app
 COPY changeFrontendConfig.sh /usr/src/config/
@@ -15,17 +15,20 @@ RUN \
   yarn global add ember-cli@3.1.4; \
   yarn global add bower;
 
+
 RUN \
-  set -x; \
-  cd /usr/src/ember-app/; \
+  echo http://dl-3.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories  && \
+  apk add chromium
+  
+WORKDIR /usr/src/ember-app
+
+COPY . /usr/src/ember-app/
+
+RUN apk add --no-cache git
+
+RUN \
   npm install ; \
   bower install  --allow-root;
 
-RUN \
-  set -x; \
-  cd /usr/src/ember-app/; \
-  ember build --environment=test
 
-FROM tomcat:jdk8-adoptopenjdk-openj9
-
-COPY --from=frontend /usr/src/ember-app/dist /usr/local/tomcat/webapps/ROOT/
+CMD ["ember", "test"]

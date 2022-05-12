@@ -27,16 +27,16 @@ jobs:
     - name: build frontend image
       run: |
        sh create-image-frontend.sh
-       
-    - name: run compose
-      run: |
-       docker-compose up -d
-       
+            
     - name: Run Google Chrome
       run: |
         sudo chown root /opt/google/chrome/chrome-sandbox
         sudo sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-        google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost/tests &
+        google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost &
+        
+    - name: run compose
+      run: |
+       docker-compose up -d
 
     - name: Shutdown docker services
       run: |
