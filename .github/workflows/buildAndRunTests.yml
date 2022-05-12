@@ -13,49 +13,30 @@ jobs:
       with:
        persist-credentials: false
           
-    - name: Build images and run
+    - name: Build images backend and database
       run: |
        set -x
        node -v
        sh create-image-backend.sh
        sh create-image-database.sh
-       docker-compose up -d
        
     - name: clone flexberry data
       run: |
        git clone https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
        
-    - name: change ember dummy config
+    - name: build frontend image
       run: |
-       sh changeFrontendConfig.sh
+       sh create-image-frontend.sh
        
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-          
-    - name: Init NodeJS env
+    - name: run compose
       run: |
-       set -x
-       node -v
-       npm install -g bower
-       npm install -g ember-cli@2.4.3
-       cd ember-flexberry-data
-       npm install
-       bower install
+       docker-compose up -d
        
     - name: Run Google Chrome
       run: |
         sudo chown root /opt/google/chrome/chrome-sandbox
         sudo sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-        google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost &
-
-    - name: Run addon tests
-      if: ${{ success() || steps.linting.conclusion == 'failure' }}
-      run: |
-        set -x
-        cd ember-flexberry-data
-        ember try default test
+        google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost/tests &
 
     - name: Shutdown docker services
       run: |

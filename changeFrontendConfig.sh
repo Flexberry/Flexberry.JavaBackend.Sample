@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -f "ember-flexberry-data/tests/dummy/config/environment.js" ]
+if [ -f "./tests/dummy/config/environment.js" ]
 then
-	back="var testODataServiceURL = 'http://localhost:8080/EmberFlexberryService';"
+	back="var testODataServiceURL = 'http://localhost/EmberFlexberryDummyService/odata';"
               
 	ifs=$IFS
 	IFS=
@@ -35,7 +35,7 @@ then
 				echo $str
 			fi			
 	  esac
-	done < ember-flexberry-data/tests/dummy/config/environment.js > ember-flexberry-data/tests/dummy/config/new_environment.js
+	done < ./tests/dummy/config/environment.js > ./tests/dummy/config/new_environment.js
     IFS=$ifs
-	mv ember-flexberry-data/tests/dummy/config/new_environment.js ember-flexberry-data/tests/dummy/config/environment.js
+	mv ./tests/dummy/config/new_environment.js ./tests/dummy/config/environment.js
 fi

@@ -1,6 +1,19 @@
 ﻿services:
+    test-nginx:
+        image: nginx:alpine
+        ports:
+            - "80:80"
+        volumes:
+            - ./conf.d:/etc/nginx/conf.d    
+
+ 
+    ember-frontend:
+        image: emberflexberrydummy-java/ember-frontend
+        ports:
+            - "8081:8080"
+            
     java-backend:
-        image: emberflexberry-java/backend
+        image: emberflexberrydummy-java/backend
         build: Java/src/main/webapp
         environment:
             DB_ADDR: app-postgres-db
@@ -8,10 +21,10 @@
             DB_USER: flexberryuser
             DB_PASS: jhv
         ports:
-            - "8080:8080"
+            - "8082:8080"
  
     app-postgres-db:
-        image: emberflexberry-java/postgre-sql
+        image: emberflexberrydummy-java/postgre-sql
         volumes:
             - DB:/var/lib/pgsql/data/
         ports:
