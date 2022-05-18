@@ -25,13 +25,13 @@ public class ApplicationUser {
     private UUID primarykey;
 
     @Column(name = "CreateTime")
-    private EdmDateTimeOffset createtime;
+    private Date createtime;
 
     @Column(name = "Creator")
     private String creator;
 
     @Column(name = "EditTime")
-    private EdmDateTimeOffset edittime;
+    private Date edittime;
 
     @Column(name = "Editor")
     private String editor;
@@ -88,11 +88,11 @@ public class ApplicationUser {
         return primarykey;
     }
 
-    public EdmDateTimeOffset getCreateTime() {
+    public Date getCreateTime() {
         return createtime;
     }
 
-    public void setCreateTime(EdmDateTimeOffset createtime) {
+    public void setCreateTime(Date createtime) {
         this.createtime = createtime;
     }
 
@@ -104,11 +104,11 @@ public class ApplicationUser {
         this.creator = creator;
     }
 
-    public EdmDateTimeOffset getEditTime() {
+    public Date getEditTime() {
         return edittime;
     }
 
-    public void setEditTime(EdmDateTimeOffset edittime) {
+    public void setEditTime(Date edittime) {
         this.edittime = edittime;
     }
 
