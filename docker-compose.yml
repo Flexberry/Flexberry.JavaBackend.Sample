@@ -7,7 +7,7 @@
             - "5432:5432"
             
         java-backend:
-        image: emberflexberry-java/backend
+        image: emberflexberrydummy-java/backend
         build: Java/src/main/webapp
         environment:
             DB_ADDR: app-postgres-db
