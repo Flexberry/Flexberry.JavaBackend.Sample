@@ -6,5 +6,5 @@ COPY Java/src src
 RUN mvn package
 
 FROM tomcat:jdk8-adoptopenjdk-openj9
-EXPOSE 8080
+EXPOSE 8080 8000
 COPY --from=0 /usr/src/app/target/*.war  /usr/local/tomcat/webapps/
