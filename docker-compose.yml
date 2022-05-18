@@ -20,12 +20,5 @@
         ports:
             - "8080:8080"
             - "8000:8000"
- 
-    app-postgres-db:
-        image: emberflexberry-java/postgre-sql
-        volumes:
-            - DB:/var/lib/pgsql/data/
-        ports:
-            - "5432:5432"
 volumes:
   DB:
