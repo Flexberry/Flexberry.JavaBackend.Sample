@@ -6,7 +6,7 @@
         ports:
             - "5432:5432"
             
-        java-backend:
+    java-backend:
         image: emberflexberrydummy-java/backend
         build: Java/src/main/webapp
         environment:
