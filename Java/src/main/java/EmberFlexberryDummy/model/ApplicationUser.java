@@ -1,5 +1,6 @@
 package EmberFlexberryDummy.model;
 
+import org.apache.olingo.commons.core.edm.primitivetype.EdmDateTimeOffset;
 import org.eclipse.persistence.annotations.Convert;
 import org.eclipse.persistence.annotations.Converter;
 import EmberFlexberryDummy.utils.UUIDConverter;
@@ -24,13 +25,13 @@ public class ApplicationUser {
     private UUID primarykey;
 
     @Column(name = "CreateTime")
-    private Date createtime;
+    private EdmDateTimeOffset createtime;
 
     @Column(name = "Creator")
     private String creator;
 
     @Column(name = "EditTime")
-    private String edittime;
+    private EdmDateTimeOffset edittime;
 
     @Column(name = "Editor")
     private String editor;
@@ -87,140 +88,140 @@ public class ApplicationUser {
         return primarykey;
     }
 
-    public Date getCreateTime() {
-      return createtime;
+    public EdmDateTimeOffset getCreateTime() {
+        return createtime;
     }
 
-    public void setCreateTime(Date createtime) {
-      this.createtime = createtime;
+    public void setCreateTime(EdmDateTimeOffset createtime) {
+        this.createtime = createtime;
     }
 
     public String getCreator() {
-      return creator;
+        return creator;
     }
 
     public void setCreator(String creator) {
-      this.creator = creator;
+        this.creator = creator;
     }
 
-    public String getEditTime() {
-      return edittime;
+    public EdmDateTimeOffset getEditTime() {
+        return edittime;
     }
 
-    public void setEditTime(String edittime) {
-      this.edittime = edittime;
+    public void setEditTime(EdmDateTimeOffset edittime) {
+        this.edittime = edittime;
     }
 
     public String getEditor() {
-      return editor;
+        return editor;
     }
 
     public void setEditor(String editor) {
-      this.editor = editor;
+        this.editor = editor;
     }
 
     public String getName() {
-      return name;
+        return name;
     }
 
     public void setName(String name) {
-      this.name = name;
+        this.name = name;
     }
 
     public String getEMail() {
-      return email;
+        return email;
     }
 
     public void setEMail(String email) {
-      this.email = email;
+        this.email = email;
     }
 
     public String getPhone1() {
-      return phone1;
+        return phone1;
     }
 
     public void setPhone1(String phone1) {
-      this.phone1 = phone1;
+        this.phone1 = phone1;
     }
 
     public String getPhone2() {
-      return phone2;
+        return phone2;
     }
 
     public void setPhone2(String phone2) {
-      this.phone2 = phone2;
+        this.phone2 = phone2;
     }
 
     public String getPhone3() {
-      return phone3;
+        return phone3;
     }
 
     public void setPhone3(String phone3) {
-      this.phone3 = phone3;
+        this.phone3 = phone3;
     }
 
     public Boolean getActivated() {
-      return activated;
+        return activated;
     }
 
     public void setActivated(Boolean activated) {
-      this.activated = activated;
+        this.activated = activated;
     }
 
     public String getVK() {
-      return vk;
+        return vk;
     }
 
     public void setVK(String vk) {
-      this.vk = vk;
+        this.vk = vk;
     }
 
     public String getFacebook() {
-      return facebook;
+        return facebook;
     }
 
     public void setFacebook(String facebook) {
-      this.facebook = facebook;
+        this.facebook = facebook;
     }
 
     public String getTwitter() {
-      return twitter;
+        return twitter;
     }
 
     public void setTwitter(String twitter) {
-      this.twitter = twitter;
+        this.twitter = twitter;
     }
 
     public Date getBirthday() {
-      return birthday;
+        return birthday;
     }
 
     public void setBirthday(Date birthday) {
-      this.birthday = birthday;
+        this.birthday = birthday;
     }
 
     public String getGender() {
-      return gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-      this.gender = gender;
+        this.gender = gender;
     }
 
     public Boolean getVip() {
-      return vip;
+        return vip;
     }
 
     public void setVip(Boolean vip) {
-      this.vip = vip;
+        this.vip = vip;
     }
 
     public Double getKarma() {
-      return karma;
+        return karma;
     }
 
     public void setKarma(Double karma) {
-      this.karma = karma;
+        this.karma = karma;
     }
 
 

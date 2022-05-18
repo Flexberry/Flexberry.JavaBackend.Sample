@@ -38,7 +38,7 @@ public class MutableHttpFilter implements javax.servlet.Filter {
         mutableResponse.setHeader("Access-Control-Allow-Credentials", "true");
         mutableResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         mutableResponse.setHeader("Access-Control-Max-Age", "3600");
-        mutableResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, OData-Version, Prefer");
+        mutableResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me, OData-Version, Prefer");
 
         if ("OPTIONS".equalsIgnoreCase(req.getMethod())) {
             resp.setStatus(HttpServletResponse.SC_OK);
