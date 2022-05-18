@@ -34,9 +34,18 @@ public class MutableHttpFilter implements javax.servlet.Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         MutableHttpResponse mutableResponse = new MutableHttpResponse(resp);
 		
-		mutableResponse.addHeader("Access-Control-Allow-Origin", "*");
-	
-        chain.doFilter(mutableRequest, mutableResponse);
+		mutableResponse.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+        mutableResponse.setHeader("Access-Control-Allow-Credentials", "true");
+        mutableResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        mutableResponse.setHeader("Access-Control-Max-Age", "3600");
+        mutableResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, OData-Version, Prefer");
+
+        if ("OPTIONS".equalsIgnoreCase(req.getMethod())) {
+            resp.setStatus(HttpServletResponse.SC_OK);
+            mutableResponse.setStatus(HttpServletResponse.SC_OK);
+        } else {
+            chain.doFilter(mutableRequest, mutableResponse);
+        }
 
         // Replace changed parameter name backward for response to frontend.
         mutableResponse.replaceSubstringInResponse("Primarykey", "__PrimaryKey");

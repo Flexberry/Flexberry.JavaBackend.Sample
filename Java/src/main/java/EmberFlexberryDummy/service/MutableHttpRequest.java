@@ -67,6 +67,27 @@ public class MutableHttpRequest extends HttpServletRequestWrapper {
 
         return modifiedQueryString;
     }
+	
+	@Override
+    public StringBuffer getRequestURL() {
+        String urlString = super.getRequestURL().toString();
+
+        if (urlString == null) {
+            return null;
+        }
+
+        String modifiedPathString = urlString;
+        int length = modifiedPathString.length();
+        String urlEnding = modifiedPathString.substring(length - 2, length);
+
+        if (urlEnding.equals("ys")) {
+            modifiedPathString = modifiedPathString.substring(0, length - 2) + "ies";
+        }
+
+        StringBuffer finalString = new StringBuffer(modifiedPathString);
+
+        return finalString;
+    }
 
     public void deleteExcessHeader(String header) {
         excessHeaders.add(header);

@@ -24,7 +24,7 @@ public class ApplicationUser {
     private UUID primarykey;
 
     @Column(name = "CreateTime")
-    private String createtime;
+    private Date createtime;
 
     @Column(name = "Creator")
     private String creator;
@@ -72,7 +72,7 @@ public class ApplicationUser {
     private Boolean vip;
 
     @Column(name = "Karma")
-    private double karma = 100f;
+    private Double karma = 100.00;
 
 
     public ApplicationUser() {
@@ -87,11 +87,11 @@ public class ApplicationUser {
         return primarykey;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
       return createtime;
     }
 
-    public void setCreateTime(String createtime) {
+    public void setCreateTime(Date createtime) {
       this.createtime = createtime;
     }
 
@@ -215,11 +215,11 @@ public class ApplicationUser {
       this.vip = vip;
     }
 
-    public double getKarma() {
+    public Double getKarma() {
       return karma;
     }
 
-    public void setKarma(double karma) {
+    public void setKarma(Double karma) {
       this.karma = karma;
     }
 
