@@ -26,7 +26,7 @@ public class Parent {
     private String name;
 
     @Column(name = "EMail")
-    private String email;
+    private String eMail;
 
     @Column(name = "Birthday")
     private Date birthday;
@@ -53,11 +53,11 @@ public class Parent {
     }
 
     public String getEMail() {
-      return email;
+      return eMail;
     }
 
     public void setEMail(String email) {
-      this.email = email;
+      this.eMail = email;
     }
 
     public Date getBirthday() {

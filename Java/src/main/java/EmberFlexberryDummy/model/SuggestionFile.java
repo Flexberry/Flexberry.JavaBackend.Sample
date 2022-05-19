@@ -5,6 +5,7 @@ import org.eclipse.persistence.annotations.Converter;
 import EmberFlexberryDummy.utils.UUIDConverter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 import com.sap.olingo.jpa.metadata.core.edm.annotation.EdmIgnore;
@@ -23,13 +24,13 @@ public class SuggestionFile {
     private UUID primarykey;
 
     @Column(name = "CreateTime")
-    private String createtime;
+    private Timestamp createTime;
 
     @Column(name = "Creator")
     private String creator;
 
     @Column(name = "EditTime")
-    private String edittime;
+    private Timestamp editTime;
 
     @Column(name = "Editor")
     private String editor;
@@ -63,12 +64,12 @@ public class SuggestionFile {
         return primarykey;
     }
 
-    public String getCreateTime() {
-      return createtime;
+    public Timestamp getCreateTime() {
+      return createTime;
     }
 
-    public void setCreateTime(String createtime) {
-      this.createtime = createtime;
+    public void setCreateTime(Timestamp createtime) {
+      this.createTime = createtime;
     }
 
     public String getCreator() {
@@ -79,12 +80,12 @@ public class SuggestionFile {
       this.creator = creator;
     }
 
-    public String getEditTime() {
-      return edittime;
+    public Timestamp getEditTime() {
+      return editTime;
     }
 
-    public void setEditTime(String edittime) {
-      this.edittime = edittime;
+    public void setEditTime(Timestamp edittime) {
+      this.editTime = edittime;
     }
 
     public String getEditor() {

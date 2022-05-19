@@ -6,6 +6,7 @@ import org.eclipse.persistence.annotations.Converter;
 import EmberFlexberryDummy.utils.UUIDConverter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 import java.util.Date;
@@ -25,13 +26,13 @@ public class ApplicationUser {
     private UUID primarykey;
 
     @Column(name = "CreateTime")
-    private Date createtime;
+    private Timestamp createTime;
 
     @Column(name = "Creator")
     private String creator;
 
     @Column(name = "EditTime")
-    private Date edittime;
+    private Timestamp editTime;
 
     @Column(name = "Editor")
     private String editor;
@@ -40,7 +41,7 @@ public class ApplicationUser {
     private String name;
 
     @Column(name = "EMail")
-    private String email;
+    private String eMail;
 
     @Column(name = "Phone1")
     private String phone1;
@@ -88,12 +89,12 @@ public class ApplicationUser {
         return primarykey;
     }
 
-    public Date getCreateTime() {
-        return createtime;
+    public Timestamp getCreateTime() {
+        return createTime;
     }
 
-    public void setCreateTime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Timestamp createtime) {
+        this.createTime = createtime;
     }
 
     public String getCreator() {
@@ -104,12 +105,12 @@ public class ApplicationUser {
         this.creator = creator;
     }
 
-    public Date getEditTime() {
-        return edittime;
+    public Timestamp getEditTime() {
+        return editTime;
     }
 
-    public void setEditTime(Date edittime) {
-        this.edittime = edittime;
+    public void setEditTime(Timestamp edittime) {
+        this.editTime = edittime;
     }
 
     public String getEditor() {
@@ -129,11 +130,11 @@ public class ApplicationUser {
     }
 
     public String getEMail() {
-        return email;
+        return eMail;
     }
 
     public void setEMail(String email) {
-        this.email = email;
+        this.eMail = email;
     }
 
     public String getPhone1() {

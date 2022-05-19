@@ -23,7 +23,7 @@ jobs:
        
     - name: clone flexberry data
       run: |
-       git clone https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
+       git clone -b feature-ember-update https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
        
     - name: change ember dummy config
       run: |
@@ -39,7 +39,7 @@ jobs:
        set -x
        node -v
        npm install -g bower
-       npm install -g ember-cli@2.4.3
+       npm install -g ember-cli@3.1.4
        cd ember-flexberry-data
        npm install
        bower install
