@@ -56,7 +56,7 @@ public class ApplicationUser {
     private Boolean activated;
 
     @Column(name = "VK")
-    private String vk;
+    private String vK;
 
     @Column(name = "Facebook")
     private String facebook;
@@ -170,11 +170,11 @@ public class ApplicationUser {
     }
 
     public String getVK() {
-        return vk;
+        return vK;
     }
 
     public void setVK(String vk) {
-        this.vk = vk;
+        this.vK = vk;
     }
 
     public String getFacebook() {
