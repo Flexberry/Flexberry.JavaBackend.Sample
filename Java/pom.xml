@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.github.SAP</groupId>
             <artifactId>olingo-jpa-processor-v4</artifactId>
-            <version>0.3.8</version>
+            <version>0.3.10</version>
         </dependency>
     </dependencies>
     <repositories>
