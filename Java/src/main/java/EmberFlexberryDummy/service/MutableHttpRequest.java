@@ -133,6 +133,13 @@ public class MutableHttpRequest extends HttpServletRequestWrapper {
             }
         }
 
-        body = stringBuilder.toString();
+        String bodyText = stringBuilder.toString();
+        String returnedText = bodyText;
+
+        if (bodyText.contains("--batch")) {
+            returnedText = bodyText.replace("Prefer: return=representation\r\n\r\n", "\r\n\r\n");
+        }
+        
+        body = returnedText;
     }
 }
