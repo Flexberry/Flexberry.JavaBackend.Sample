@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2.3.1
       with:
        persist-credentials: false
-          
+
     - name: Build images and run
       run: |
        set -x
@@ -20,20 +20,20 @@ jobs:
        sh create-image-backend.sh
        sh create-image-database.sh
        docker-compose up -d
-       
+
     - name: clone flexberry data
       run: |
        git clone -b feature-ember-update https://github.com/Flexberry/ember-flexberry-data.git ember-flexberry-data
-       
+
     - name: change ember dummy config
       run: |
        sh changeFrontendConfig.sh
-       
+
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-          
+
     - name: Init NodeJS env
       run: |
        set -x
@@ -43,7 +43,7 @@ jobs:
        cd ember-flexberry-data
        npm install
        bower install
-       
+
     - name: Run Google Chrome
       run: |
         sudo chown root /opt/google/chrome/chrome-sandbox
@@ -55,7 +55,7 @@ jobs:
       run: |
         set -x
         cd ember-flexberry-data
-        ember try default test
+        ember try:one ember-default --skip-cleanup
 
     - name: Shutdown docker services
       run: |
