@@ -1,0 +1,24 @@
+﻿services:
+    app-postgres-db:
+        image: emberflexberrydummy-java/postgre-sql
+        volumes:
+            - DB:/var/lib/pgsql/data/
+        ports:
+            - "5432:5432"
+            
+    java-backend:
+        image: emberflexberrydummy-java/backend
+        build: Java/src/main/webapp
+        environment:
+            DB_ADDR: app-postgres-db
+            DB_NAME: appdb
+            DB_USER: flexberryuser
+            DB_PASS: jhv
+            JPDA_ADDRESS: 8000
+            JPDA_TRANSPORT: dt_socket
+        entrypoint: /usr/local/tomcat/bin/catalina.sh jpda run            
+        ports:
+            - "8080:8080"
+            - "8000:8000"
+volumes:
+  DB:
