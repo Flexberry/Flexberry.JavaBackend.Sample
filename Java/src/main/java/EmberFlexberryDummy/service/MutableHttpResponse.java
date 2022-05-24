@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
@@ -94,6 +95,6 @@ public class MutableHttpResponse extends HttpServletResponseWrapper {
     }
 
     private String getCaptureAsString() throws IOException {
-        return new String(getCaptureAsBytes(), getCharacterEncoding());
+        return new String(getCaptureAsBytes(), StandardCharsets.UTF_8);
     }
 }
