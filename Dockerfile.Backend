@@ -7,4 +7,4 @@ RUN mvn package
 
 FROM tomcat:jdk8-adoptopenjdk-openj9
 EXPOSE 8080 8000
-COPY --from=0 /usr/src/app/target/*.war  /usr/local/tomcat/webapps/
+COPY --from=0 /usr/src/app/target/EmberFlexberryDummyService.war /usr/local/tomcat/webapps/ROOT.war
